@@ -17,10 +17,6 @@ return new class extends Migration
             $table->string('nombre', 40);
             $table->integer('num_socios');
         });
-        Schema::table('jugadors', function(Blueprint $table){
-            $table->unsignedBigInteger('id_equipo')->nullable();
-            $table->foreign('id_equipo')->references('id')->on('equipos')->onUpdate('cascade')->onDelete('restrict');
-        });
     }
 
     /**
@@ -28,10 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        /* Schema::table('jugadors',function(Blueprint $table){
-            $table->dropForeign(['id_equipo']);
-        });
-        Schema::dropColumns('jugadors',['id_equipo']); */
         Schema::dropIfExists('equipos');
     }
 };

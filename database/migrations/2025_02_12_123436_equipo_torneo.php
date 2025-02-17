@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_torneo');
             $table->foreign('id_equipo')->references('id')->on('equipos');
             $table->foreign('id_torneo')->references('id')->on('torneos');
+            $table->integer('anho');
         });
     }
 

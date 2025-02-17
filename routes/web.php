@@ -7,13 +7,5 @@ Route::get('/', function () {
 });
 
 Route::get('/furbinho', function(){
-    return view('furbo-menu');
+    return view('menu-furbo');
 });
-
-Route::get('/furbinho/equipos', function(){
-    return view('equipos-menu');
-})->name('equipos');
-
-Route::get('/furbinho/equipos', function(){
-    return view('torneos-menu');
-})->name('torneos');

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('apellidos', 150);
             $table->integer('dorsal');
             $table->date('f_nac');
+            $table->unsignedBigInteger('id_equipo')->nullable();
+            $table->foreign('id_equipo')->references('id')->on('equipos')->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
