@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Torneo extends Model
 {
     public function equipos():BelongsToMany{
-        return $this->belongsToMany(Equipo::class);
+        return $this->belongsToMany(Equipo::class, 'equipo_torneo')
+                        ->withPivot('anho');
     }
 }
