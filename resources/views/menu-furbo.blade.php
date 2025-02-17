@@ -11,8 +11,8 @@
     <h1>Bienvenido a Furbito</h1>
         <nav>
             <ul>
-                <li>Alta equipo</li>
-                <li>Listar equipos</li>
+                <li><a href="{{ route('nuevoEquipo') }}">Alta equipo</a></li>
+                <li><a href="{{ route('listaEquipos') }}">Listar equipos</a></li>
                 <li>Listar jugadores de un equipo</li>
                 <li>Añadir un jugador a un equipo</li>
                 <li>Añadir un equipo a un torneo</li>
