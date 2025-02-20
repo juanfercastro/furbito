@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class JugadorController extends Controller
 {
-    public function listJugadores($id){
-        $data['jugadores'] = Jugador::find();
+    public function listJugadoresEquipo($id){
+        $data['jugadores'] = Jugador::where('id_equipo', $id)->get();
+        return view('list-jugadores', $data);
     }
 }

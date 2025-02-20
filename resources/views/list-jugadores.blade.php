@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <title>Añadir un equipo</title>
+    <title>Listado jugadores</title>
 </head>
+
 <body>
-    <h1>Lista de Equipos existentes</h1>
+    @if (count($jugadores)>0)
+    <h1>Lista de jugadores</h1>
     <table>
         <tr>
             <th>Nombre</th>
-            <th>Socios</th>
-            <th>Plantilla</th>
+            <th>Apellidos</th>
+            <th>Dorsal</th>
+            <th>Fecha de nacimiento</th>
         </tr>
-        @foreach ($equipos as $e)
+        @foreach ($jugadores as $j)
         <tr>
-            <td>{{ $e->nombre }}</td>
-            <td>{{ $e->num_socios }}</td>
+            <td>{{ $j->nombre }}</td>
+            <td>{{ $j->apellidos }}</td>
+            <td>{{ $j->dorsal }}</td>
+            <td>{{ $j->f_nac }}</td>
         </tr>
         @endforeach
     </table>
-    <footer>
-        <a href="{{ route('inicio') }}">Volver al menu</a>
-    </footer>
+    @else
+    <h1>No hay jugadores</h1>
+    @endif
 </body>
+
 </html>
