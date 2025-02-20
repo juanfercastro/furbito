@@ -8,15 +8,20 @@
     <title>Añadir un equipo</title>
 </head>
 <body>
-    <h1>Nuevo Equipo</h1>
-    <form action="{{ route('addEquipo') }}" method="post">
-        @csrf
-        <label for="name">Nombre</label>
-        <input type="text" name="name" id="name"><br>
-        <label for="socios">Nª de socios</label>
-        <input type="number" name="socios" id="socios"><br>
-        <button type="submit">Guardar</button>
-    </form>
+    <h1>Lista de Equipos existentes</h1>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Socios</th>
+            <th>Plantilla</th>
+        </tr>
+        @foreach ($equipos as $e)
+        <tr>
+            <td>{{ $e->nombre }}</td>
+            <td>{{ $e->num_socios }}</td>
+        </tr>
+        @endforeach
+    </table>
     <footer>
         <a href="{{ route('inicio') }}">Volver al menu</a>
     </footer>

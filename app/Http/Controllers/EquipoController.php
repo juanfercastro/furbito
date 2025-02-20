@@ -14,7 +14,7 @@ class EquipoController extends Controller
 
         $equipo->save();
 
-        return $this->listEquipos();
+        return redirect()->route('listaEquipos');
     }
 
     public function listEquipos(){
