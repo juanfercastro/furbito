@@ -18,14 +18,18 @@ class JugadorController extends Controller
         return view('list-jugadores', $data);
     }
 
-    public function addJugadores(Request $r){
+    public function addJugador(Request $r){
         $jugador = new Jugador();
-        $jugador->nombre = $r->get('nombre');
+        $jugador->nombre = $r->get('name');
         $jugador->apellidos = $r->get('apel');
         $jugador->dorsal = $r->get('dorsal');
         $jugador->f_nac = $r->get('f_nac');
         if ($r->get('team')!=-1) {
             $jugador->id_equipo = $r->get('team');
         }
+
+        $jugador->save();
+
+        return redirect()->route('listaJugadores', $r->get('team'));
     }
 }

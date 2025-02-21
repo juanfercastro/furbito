@@ -9,5 +9,27 @@
 </head>
 <body>
     <h1>Nuevo Jugador</h1>
+    <form action="{{ route('addJugador') }}" method="post">
+        @csrf
+        <label for="team">Equipo</label>
+        <select name="team" id="team" required>
+            <option value="-1">Sin equipo</option>
+            @foreach ($equipos as $e)
+            <option value="{{ $e->id }}">{{ $e->nombre }}</option>
+            @endforeach
+        </select><br>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" required><br>
+        <label for="apel">Apellidos</label>
+        <input type="text" name="apel" id="apel" required><br>
+        <label for="dorsal">Dorsal</label>
+        <input type="number" name="dorsal" id="dorsal" required><br>
+        <label for="f_nac">Fecha de nacimiento</label>
+        <input type="date" name="f_nac" id="f_nac" required><br>
+        <button type="submit">Guardar</button>
+    </form>
+    <footer>
+        <a href="{{ route('inicio') }}">Volver al menu</a>
+    </footer>
 </body>
 </html>
