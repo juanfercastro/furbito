@@ -29,8 +29,11 @@
         @endforeach
     </table>
     @else
-    <h1>No hay jugadores</h1>
+    <h1>No hay jugadores registrados</h1>
     @endif
+    <footer>
+        <a href="{{ route('inicio') }}">Volver al menu</a>
+    </footer>
 </body>
 
 </html>

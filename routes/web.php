@@ -15,3 +15,4 @@ Route::get('/equipos/nuevo', function () {
 Route::post('/equipos/alta',[EquipoController::class,'addEquipo'])->name('addEquipo');
 Route::get('/equipos/listar',[EquipoController::class, 'listEquipos'])->name('listaEquipos');
 Route::get('/jugadores/listar/{id}',[JugadorController::class, 'listJugadoresEquipo'])->name('listaJugadores');
+Route::get('jugadores/alta',[JugadorController::class, 'addJugadores'])->name('addJugador');

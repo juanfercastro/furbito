@@ -13,8 +13,7 @@
             <ul>
                 <li><a href="{{ route('nuevoEquipo') }}">Alta equipo</a></li>
                 <li><a href="{{ route('listaEquipos') }}">Listar equipos</a></li>
-                <li>Listar jugadores de un equipo</li>
-                <li>Añadir un jugador a un equipo</li>
+                <li><a href="{{ route('addJugador') }}">Añadir un jugador a un equipo</a></li>
                 <li>Añadir un equipo a un torneo</li>
                 <li>Listar equipos de un torneo (anual)</li>
                 <li>Añadir un equipo a un torneo</li>
